@@ -134,14 +134,14 @@ class LakersBot(sc2.BotAI):
             await self.train_WORKERS(cc)           # 训练农民
 
         ################ 采矿 ######################
-        #if not self.is_worker_rush:
-        #await self.distribute_workers()
+        #if not self.is_worker_rush
+        
         for a in self.units(REFINERY):
             if a.assigned_harvesters < a.ideal_harvesters:
                 w = self.workers.closer_than(20, a)
                 if w.exists:
                     await self.do(w.random.gather(a))
-
+        await self.distribute_workers()
         #await self.scan_move()
 
         ############### 扩张 ######################
